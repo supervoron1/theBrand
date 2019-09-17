@@ -8,7 +8,7 @@ app.use('/', express.static('public'));
 app.use('/api/cart', cart);
 
 app.get('/api/products', (req, res) => {
-  fs.readFile('server/db/products.json', 'utf8', (err, data) => {
+  fs.readFile('server/db/products.json', 'utf-8', (err, data) => {
     if (err) {
       res.send({result: 0, text: 'Error!!'})
     } else {
@@ -17,20 +17,4 @@ app.get('/api/products', (req, res) => {
   })
 });
 
-// app.get()
-// app.post()
-// app.put()
-// app.delete()
-
-// app.get('/', (req, res) => {
-//   res.send('Hello world');
-// });
-//
-// app.get('/api/users/:id', (req, res) => {
-//   // res.send(req.params.id)
-//   res.send(req.query)
-
-// res.send('Hello world');
-// });
-
-app.listen(3000, () => console.log('Server started....'));
+app.listen(3000, () => console.log('Server started at port 3000....'));

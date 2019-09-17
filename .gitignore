@@ -2,3 +2,4 @@
 *.zip
 psd/
 arch_zip/
+node_modules

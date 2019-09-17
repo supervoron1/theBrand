@@ -270,21 +270,21 @@ a {
 
 
 .category__block_men {
-    background-image: url(./img/men.jpg);
+    background-image: url(img/men.jpg);
 }
 
 .category__block_access {
-    background-image: url(./img/accessories.jpg);
+    background-image: url(img/accessories.jpg);
     background-repeat: no-repeat;
     background-position: right;
 }
 
 .category__block_women {
-    background-image: url(./img/women.jpg);
+    background-image: url(img/women.jpg);
 }
 
 .category__block_kids {
-    background-image: url(./img/kids.jpg);
+    background-image: url(img/kids.jpg);
 }
 
 .product__text {
@@ -349,12 +349,12 @@ a {
 .feature__banner {
     width: 767px;
     height: 100%;
-    background: url(./img/feature-bgi-shadow.png), url(./img/feature-bgi.jpg);
+    background: url(img/feature-bgi-shadow.png), url(img/feature-bgi.jpg);
 
 }
 
 .feature__banner:hover {
-    background: url(./img/feature-bgi.jpg);
+    background: url(img/feature-bgi.jpg);
 }
 
 .feature__p1 {
@@ -423,7 +423,7 @@ a {
 
 .subscribe {
     height: 438px;
-    background-image: url(./img/subscribe_bgi-2.jpg);
+    background-image: url(img/subscribe_bgi-2.jpg);
     background-size: cover;
     background-position: bottom;
     margin-bottom: 109px;
@@ -1077,7 +1077,7 @@ summary {
 }
 
 .drop__sale {
-    background: url(./img/drop_sale.png);
+    background: url(img/drop_sale.png);
     height: 118px;
     width: 255px;
     margin-left: -20px;

@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<div id="app">
 <div class="wrapper">
     <div class="content">
         <header class="header">
@@ -61,39 +62,7 @@
                 </div>
                 <div class="header__right">
                     <div class="cart-icon">
-                        <a href="#"><img class="cart-pic" src="img/cart.svg" alt="cart"></a>
-                        <div class="drop drop__cart">
-                            <div class="drop__cart_flex">
-                                <a href="product.html"><img src="img/cart_img.png"
-                                                            alt="pic"></a>
-                                <div class="drop__cart_flex-text">
-                                    <a href="product.html" class="cart_flex-p">rebox zane</a>
-                                    <a href="#"><img src="img/rating.png" style="padding: 10px 0;"
-                                                     alt="rating"></a>
-                                    <p class="cart_flex-pink">1&nbsp;x $250</p>
-                                </div>
-                                <a href="#"><i class="fas fa-times-circle"></i></a>
-                            </div>
-                            <div class="drop__cart_flex">
-                                <a href="product.html"><img src="img/cart_img2.png"
-                                                            alt="pic"></a>
-                                <div class="drop__cart_flex-text">
-                                    <a href="product.html" class="cart_flex-p">rebox zane</a>
-                                    <a href="#"><img src="img/rating.png" style="padding: 10px 0;"
-                                                     alt="rating"></a>
-                                    <p class="cart_flex-pink">1&nbsp;x $250</p>
-                                </div>
-                                <a href="#"><i class="fas fa-times-circle"></i></a>
-                            </div>
-                            <div class="cart_flex-sum">
-                                <p class="cart_flex-p fs16">total</p>
-                                <p class="cart_flex-p fs16">$500.00</p>
-                            </div>
-                            <div class="drop__buttons">
-                                <a href="checkout.html" class="dropmenu-button">checkout</a>
-                                <a href="cart.html" class="dropmenu-button">go&nbsp;to&nbsp;cart</a>
-                            </div>
-                        </div>
+                        <cart ref="cart"></cart>
                     </div>
                     <div class="account-sign">
                         <a href="#" class="button">My&nbsp;Account<i
@@ -352,6 +321,7 @@
                 </li>
             </ul>
         </nav>
+        <error ref="error"></error>
         <nav class="breadcrumb">
             <nav class="breadcrumb__menu container">
                 <h2 class="breadcrumb__menu_h">new arrivals</h2>
@@ -586,6 +556,7 @@
             </div>
         </div>
     </footer>
+</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/CartComp.js"></script>

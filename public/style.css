@@ -1165,7 +1165,7 @@ summary {
 }
 
 .drop__cart {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 71px;
@@ -1174,9 +1174,9 @@ summary {
     z-index: 1;
 }
 
-.cart-icon:hover .drop__cart {
-    display: flex;
-}
+/*.cart-icon:hover .drop__cart {*/
+/*    display: flex;*/
+/*}*/
 
 .drop__cart::before {
     left: 90px;

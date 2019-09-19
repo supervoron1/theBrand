@@ -43,6 +43,12 @@ Vue.component('cart', {
           })
       }
     },
+    clearCart() {
+      this.$parent.deleteJson(`/api/cart`)
+        .then(data => {
+          this.cartItems = []
+        })
+    }
   },
   mounted() {
     this.$parent.getJson('/api/cart')
@@ -105,7 +111,7 @@ Vue.component('cart-item', {
               </div>`
 });
 
-Vue.component('cart-page',{
+Vue.component('cart-page', {
   template: `
         <div>
         <cart-page-item
@@ -117,7 +123,7 @@ Vue.component('cart-page',{
         :cart-page-item="item"
         ></cart-page-item>
         <nav class="cart__flex_buttons">
-            <button class="button-cart" @click="$root.$refs.cart.clearCart()">clear shopping cart</button>
+            <button @click="$root.$refs.cart.clearCart()"><a href="#" class="button-cart">clear shopping cart</a></button>
             <button><a href="product.html" class="button-cart">continue shopping</a></button>
         </nav>   
         <div class="shipping container">
@@ -168,7 +174,7 @@ Vue.component('cart-page',{
   `
 });
 
-Vue.component('cart-page-item',{
+Vue.component('cart-page-item', {
   props: ['cartPageItem', 'img'],
   template: `
             <div class="cart__flex">

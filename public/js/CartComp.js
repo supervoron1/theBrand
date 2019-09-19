@@ -104,3 +104,94 @@ Vue.component('cart-item', {
                  <button class="del-btn" @click="$emit('remove', cartItem)"><i class="fas fa-times-circle"></i></button>
               </div>`
 });
+
+Vue.component('cart-page',{
+  template: `
+        <div>
+        <cart-page-item
+        v-for="item of $root.$refs.cart.cartItems"
+        :key="item.id_product"
+        :img="item.img"
+        :quantity="item.quantity"
+        :id="item.id_product"
+        :cart-page-item="item"
+        ></cart-page-item>
+        <nav class="cart__flex_buttons">
+            <button class="button-cart" @click="$root.$refs.cart.clearCart()">clear shopping cart</button>
+            <button><a href="product.html" class="button-cart">continue shopping</a></button>
+        </nav>   
+        <div class="shipping container">
+            <section class="shipping__address">
+                <h3 class="shipping__h3">shipping address</h3>
+                <form action="#">
+                    <label for="shipping__country"></label>
+                    <select name="shipping__country" id="shipping__country">
+                        <option value="shipping__country" selected>Bangladesh</option>
+                        <option value="shipping__country">Russia</option>
+                        <option value="shipping__country">Belarus</option>
+                        <option value="shipping__country">Germany</option>
+                        <option value="shipping__country">France</option>
+                        <option value="shipping__country">Italy</option>
+                    </select> <br>
+                    <label for="shipping__state"></label>
+                    <input id="shipping__state" type="text" placeholder="State" required><br>
+                    <label for="shipping__zip"></label>
+                    <input id="shipping__zip" type="number" placeholder="Postcode / Zip"
+                           required><br>
+                </form>
+                <a href="#" class="button-shipping">get a&nbsp;quote</a>
+            </section>
+            <section class="shipping__coupon">
+                <h3 class="shipping__h3">coupon discount</h3>
+                <p class="shipping__p">Enter your coupon code if&nbsp;you have one</p>
+                <form action="#">
+                    <label for="shipping__state2"></label>
+                    <input id="shipping__state2" type="text" placeholder="State" required><br>
+                </form>
+                <a href="#" class="button-shipping">apply coupon</a>
+            </section>
+            <div class="grandtotal">
+                <div class="grandtotal__checkout">
+                    <div class="grandtotal__sum">
+                        <p>sub total</p>
+                        <p class="padd">$ {{$root.$refs.cart.totalCart}}</p>
+                    </div>
+                    <div class="grandtotal__sumfinal">
+                        <p>grand total</p>
+                        <p class="pink padd">$ {{$root.$refs.cart.totalCart}}</p>
+                    </div>
+                </div>
+                <a href="checkout.html" class="button-grandtotal">proceed to&nbsp;checkout</a>
+            </div>
+        </div>
+        </div>
+  `
+});
+
+Vue.component('cart-page-item',{
+  props: ['cartPageItem', 'img'],
+  template: `
+            <div class="cart__flex">
+                <div class="cart__flex_left">
+                    <a href="item.html"><img class="cart-page-img" :src="img" alt="pic"></a>
+                    <div class="cart__flex_text">
+                        <a href="item.html" class="cart__flex_text-h3">{{cartPageItem.product_name}}</a>
+                        <div class="cart__flex_text-p">
+                            <p>Color:<span class="cart_text"> Red</span></p>
+                            <p>Size:<span class="cart_text"> XL</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__flex_right wide">
+                    <p>$ {{cartPageItem.price}}</p>
+                    <form action="#">
+                        <label for="cart_ammount"></label>
+                        <input id="cart_ammount" type="number" v-model.number="cartPageItem.quantity">
+                    </form>
+                    <p>FREE</p>
+                    <p>$ {{ cartPageItem.price * cartPageItem.quantity }}</p>
+                    <button @click="$root.$refs.cart.remove(cartPageItem)"><i class="fas fa-times-circle"></i></button>
+                </div>
+            </div>
+  `
+});
